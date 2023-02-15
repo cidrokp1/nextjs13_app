@@ -2,8 +2,13 @@ import Card from "@/pages/api/components/Card/Card";
 
 export default async function Candidaturas() {
 
-  const data = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=eae08655283c226acc01fd683762118d&language=en-US&page=1")
-  const movies = await data.json(); 
+  const response = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=eae08655283c226acc01fd683762118d&language=en-US&page=1",{
+    next: {
+      revalidate: 30, //atualiza de 30 em 30 segundos
+      cache: "force-cache", //no-store, no-cache, force-cache, only-if-cached
+    },
+  })
+  const movies = await response.json(); 
   console.log(movies.results);
 
   return (
