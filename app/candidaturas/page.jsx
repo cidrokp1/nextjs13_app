@@ -1,4 +1,4 @@
-import Card from "@/pages/api/components/Card/Card";
+import Card from "@/components/shared/Card/Card";
 
 export default async function Candidaturas() {
 
@@ -19,7 +19,6 @@ export default async function Candidaturas() {
           { movies.results.map((movie) => <Card title={movie.title} id={movie.id} /> )}
        </div>
      </div>
-     
     </>
   ) 
   }

@@ -2,11 +2,11 @@
 
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './navbar';
-import { AuthorizationProvider } from '@/pages/api/context/AuthorizationContext';
-import { DataProvider } from '@/pages/api/context/DataContext';
-import { ModalProvider } from '@/pages/api/context/ModalContext';
-import Modal from '@/pages/api/components/Modal';
+import Navbar from '../components/shared/navbar'; 
+import Modal from '../components/shared/Modal';
+import { AuthorizationProvider } from '@/context/AuthorizationContext';
+import { DataProvider } from '@/context/DataContext'; 
+import { ModalProvider } from '@/context/ModalContext';
 
 
 export default function RootLayout({ children }) {

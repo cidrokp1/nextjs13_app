@@ -1,12 +1,14 @@
+"use client"
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { useModalContext } from '@/pages/api/context/ModalContext';
-import Perfil from './perfil/page';
-import Notificacoes from './notificacoes/page';
-import Settings from './settings/page';
+import NotificationsIcon from '@mui/icons-material/Notifications'; 
+import Perfil from '../../app/perfil/page';
+import Notificacoes from '../../app/notificacoes/page';
+import Settings from '../../app/settings/page';
+import { useModalContext } from '@/context/ModalContext';
+import Dashboards from '@/app/dashboards/page';
 
-
+ 
 export default function Navbar() {
 
     const { openModal, closeModal } = useModalContext();

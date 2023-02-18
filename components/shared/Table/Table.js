@@ -32,6 +32,7 @@ const Table = ({
 
   const [rowSelection, setRowSelection] = useState({});
   const [createModalOpen, setCreateModalOpen] = useState(false);
+  const [data, setData] = useState([]);
   // const [buttonExcel, setButtonExcel] = useState(null);
   // const open = Boolean(buttonExcel); 
  
@@ -129,14 +130,6 @@ const Table = ({
           renderRowActionMenuItems={renderRowActionMenuItems}
           memoMode="cells"
           muiTableContainerProps={{ sx: { maxHeight: "600px" } }}
-          muiToolbarAlertBannerProps={
-            isError
-              ? {
-                  color: "error",
-                  children: "Erro ao processar a tabela. \n\n" + error,
-                }
-              : undefined
-          }
           rowCount={data.length}
           getRowId={(row) => row.id}
           initialState={initialState}
@@ -194,11 +187,8 @@ const Table = ({
               }
             },
           })}
-          state={{
-            isLoading,
-            rowSelection,
-            showAlertBanner: isError,
-            showProgressBars: isRefetching,
+          state={{ 
+            rowSelection,  
           }}
           // localization={MRT_Localization_PT_BR}
         />

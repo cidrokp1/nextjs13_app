@@ -6,8 +6,8 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-} from "@mui/material"; 
-import { useModalContext } from "../context/ModalContext";
+} from "@mui/material";  
+import { useModalContext } from "@/context/ModalContext";
 const Modal = () => {
   const {
     modal: { open, body, maxWidth, title, footer, submitBtnText, onSubmit },
