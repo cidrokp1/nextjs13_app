@@ -1,17 +1,15 @@
 "use client"
-import React, { useEffect, useContext, useState } from "react"; 
+import React, { useState } from "react"; 
 import Typography from "@mui/material/Typography";
-// import { MRT_Localization_PT_BR } from "material-react-table/locales/pt-BR";
-// import DataContext from "../context/DataContext";
-// import axios from "axios";
-// import alertify from "alertifyjs";
-// import "alertifyjs/build/css/alertify.css";
-// import MenuExportExcel from "./MenuExportExcel";
+import { MRT_Localization_PT_BR } from "material-react-table/locales/pt-BR";  
+import MenuExportExcel from "./MenuExportExcel";
 import { Delete, AddBox } from "@mui/icons-material";
 import MaterialReactTable from 'material-react-table';
 import { IconButton, Tooltip } from "@mui/material";
 import FileDownloadIcon from '@mui/icons-material/FileDownload'; 
-import { CreateNewModal } from "./CreateNewModalReactTable";
+import { CreateNewModal } from "./CreateNewModal";
+import Notiflix from 'notiflix';
+
 
 
 const Table = ({
@@ -33,23 +31,23 @@ const Table = ({
   const [rowSelection, setRowSelection] = useState({});
   const [createModalOpen, setCreateModalOpen] = useState(false);
   const [data, setData] = useState([]);
-  // const [buttonExcel, setButtonExcel] = useState(null);
-  // const open = Boolean(buttonExcel); 
+  const [buttonExcel, setButtonExcel] = useState(null);
+  const open = Boolean(buttonExcel); 
  
 
   const handleCreateNewRow = async (values) => {
-    setIsLoading(true);
+  
     handleCreate(values)
       .then((response) => {
         setData([...data, response.data]);
-        alertify.success("Sucesso");
+        Notiflix.Notify.success("Sucesso");
       })
       .catch((error) => handleErrors(error));
-    setIsLoading(false);
+ 
   };
 
   const handleSaveRow = async ({ exitEditingMode, row, values }) => {
-    setIsLoading(true);
+    
 
     row.getAllCells().map((item) => {
       if (item.selectedOptions) {
@@ -60,37 +58,35 @@ const Table = ({
       .then((response) => { 
         data[row.index] = values;
         setData([...data]);
-        alertify.success("Sucesso");
+        Notiflix.Notify.success("Sucesso");
       })
       .catch((error) => handleErrors(error));
-    setIsLoading(false);
+    
     exitEditingMode(); //required to exit editing mode
   };
 
   const handleDeleteRow = () => {
-    alertify.confirm(
-      "<strong>Deseja apagar o(s) item(s)?</strong> ",
-      "",
+    Notiflix.Confirm.show(
+      "Apagar",
+      "Deseja apagar o(s) item(s)?",
+      "Sim","Não",
       function () {
         const selectedIds = Object.keys(rowSelection);
-        try {
-          setIsLoading(true);
+        try { 
           selectedIds.forEach(async (id) => await handleDelete(id));
-
           let newArray = data.filter(
             (item) => !selectedIds.includes(item.id.toString())
           );
           setData([...newArray]);
-          alertify.success("Sucesso");
+          Notiflix.Notify.success("Sucesso");
         } catch (error) {
           handleErrors(error);
-        } finally {
-          setIsLoading(false);
+        } finally { 
           setRowSelection({});
         }
       },
       function () {
-        alertify.error("Cancelado");
+        Notiflix.Notify.failure("Cancelado");
       }
     );
   };
@@ -115,7 +111,7 @@ const Table = ({
                   <FileDownloadIcon />
                 </IconButton>
               </Tooltip>
-              {/* <MenuExportExcel table={table} open={open} columns={columns} setButtonExcel={setButtonExcel} buttonExcel={buttonExcel}/> */}
+              <MenuExportExcel table={table} open={open} columns={columns} setButtonExcel={setButtonExcel} buttonExcel={buttonExcel}/>
               </div>
              </div>
             
@@ -190,7 +186,7 @@ const Table = ({
           state={{ 
             rowSelection,  
           }}
-          // localization={MRT_Localization_PT_BR}
+          localization={MRT_Localization_PT_BR}
         />
       )}
 

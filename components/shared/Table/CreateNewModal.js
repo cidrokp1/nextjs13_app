@@ -65,7 +65,7 @@ export const CreateNewModal = ({ open, columns, onClose, onSubmit }) => {
           };
         })
       );
-    }, [open]);
+    }, [open, columns]);
   
     const isValid = (isRequired, type, value, id) => {
       // console.log(value)

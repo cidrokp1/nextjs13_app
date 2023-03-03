@@ -1,0 +1,83 @@
+{
+    "api": [{
+        "adult": false,
+        "genre_ids ": [
+            28,
+            12,
+            878
+        ],
+        "id": 1,
+        "popularity": 5334.97,
+        "poster_path": "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+        "release_date": "2022-11-09",
+        "title": "Black Panther: Wakanda Forever"
+    }, {
+        "adult": false,
+        "genre_ids ": [
+            28,
+            12,
+            878
+        ],
+        "id": 2,
+        "popularity": 5334.97,
+        "poster_path": "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+        "release_date": "2022-11-09",
+        "title": "Black Panther: Wakanda Forever"
+    }, {
+        "adult": false,
+        "genre_ids ": [
+            28,
+            12,
+            878
+        ],
+        "id": 3,
+        "popularity": 5334.97,
+        "poster_path": "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+        "release_date": "2022-11-09",
+        "title": "Black Panther: Wakanda Forever"
+    }, {
+        "adult": false,
+        "genre_ids ": [
+            28,
+            12,
+            878
+        ],
+        "id": 4,
+        "popularity": 5334.97,
+        "poster_path": "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+        "release_date": "2022-11-09",
+        "title": "Black Panther: Wakanda Forever"
+    }, {
+        "adult": false,
+        "genre_ids ": [
+            28,
+            12,
+            878
+        ],
+        "id": 5,
+        "popularity": 5334.97,
+        "poster_path": "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+        "release_date": "2022-11-09",
+        "title": "Black Panther: Wakanda Forever"
+    }, {
+        "adult": false,
+        "genre_ids ": [
+            28,
+            12,
+            878
+        ],
+        "id": 6,
+        "popularity": 5334.97,
+        "poster_path": "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+        "release_date": "2022-11-09",
+        "title": "Black Panther: Wakanda Forever"
+    }],
+    "admin": {
+        "login": {
+            "roles": [
+                "Admin"
+            ],
+            "username": 15283213
+        }
+    }
+}

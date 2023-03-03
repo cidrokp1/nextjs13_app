@@ -1,5 +1,3 @@
-"use client"
-
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../components/shared/navbar'; 
@@ -10,12 +8,10 @@ import { ModalProvider } from '@/context/ModalContext';
 
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+      {/* <head /> will contain the components returned by the nearest parent head.js.  */} 
       <head />
       <body className='body'>
         <div className='body-layout'>
@@ -23,7 +19,7 @@ export default function RootLayout({ children }) {
             <DataProvider>
               <ModalProvider>
                 <Modal />
-                <Navbar />
+                <Navbar/>
                 <div className='container py-3'>
                   {children}
                 </div>

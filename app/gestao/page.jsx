@@ -4,7 +4,6 @@ export default function Gestao() {
        <div className="section-container shadow">
           <h1>Gestão</h1>
        </div>
-       
       </>
     )
   }

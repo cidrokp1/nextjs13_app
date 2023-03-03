@@ -49,8 +49,8 @@ const MenuExportExcel = ({ open, setButtonExcel, buttonExcel, columns, table }) 
       result.push(obj);
     });
     
-    console.log(result); 
-    console.log(JSON.stringify(result)); 
+    // console.log(result); 
+    // console.log(JSON.stringify(result)); 
     // console.log(JSON.parse(result));
     csvExporter.generateCsv(JSON.stringify(result));
     setButtonExcel(null)
